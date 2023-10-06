@@ -1,13 +1,149 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/*
+============ 
+fonts config
+============ 
+*/
 @font-face {
-    font-family: "vazir-medium";
-    src: url(/Src/assets/lib/fonts/vazirFont/Vazir-Medium.woff)format("wff"),
-    url(/Src/assets/lib/fonts/vazirFont/Vazir-Medium.woff2)format("wff2");
+  font-family: "vazir-medium";
+  src: url(/Src/assets/lib/fonts/vazir-Font/Vazir-Medium.woff) format("wff"),
+    url(/Src/assets/lib/fonts/vazir-Font/Vazir-Medium.woff2) format("wff2");
+}
+@font-face {
+  font-family: "vazir-medium-number";
+  src: url(/Src/assets/lib/fonts/vazir-Font/Vazir-Medium-FD-WOL.woff)
+      format("woff"),
+    url(/Src/assets/lib/fonts/vazir-Font/Vazir-Medium-FD-WOL.woff2)
+      format("woff2");
+}
+/*
+============ 
+global config
+============ 
+*/
+:root {
+  --ff-primary: "vazir-medium-number", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --textColor: white;
+  --Clr-Primary: #f77f00;
+  --Clr-Primary-Light: #fcbf49;
+  --Clr-Secoundery: #d62828;
+  --Clr-light: #eae2b7;
+  --Clr-dark: #003049;
+  --Clr-gray-1: #b7b5b5;
+  --Clr-gray-5: #f0eded;
+  --transition: all 0.3s linear;
+  --radius: 0.5rem;
+}
+body {
+  font-family: var(--ff-primary);
+  text-align: right;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.75rem;
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 2.25rem;
   }
-  @font-face {
-    font-family: "vazir-medium-number";
-    src: url(/Src/assets/lib/fonts/vazirFont/Vazir-Medium-FD-WOL.woff)format("woff"),
-    url(/Src/assets/lib/fonts/vazirFont/Vazir-Medium-FD-WOL.woff2)format("woff2");
+  h2 {
+    font-size: 2rem;
   }
-  :root{
-    font-family: 'vazir-medium-number', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+.btn {
+  background-color: var(--Clr-Primary);
+  color: var(--textColor);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+.btn:hover {
+  color: var(--ColorDark);
+  background-color: var(--Clr-Primary-Light);
+}
+/*
+============ 
+header part 
+============ 
+*/
+.banner {
+  height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+    url(/Src/assets/lib/images/bigHiroImage.png) center/cover no-repeat fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner-text {
+  line-height: 2rem;
+  text-align: center;
+  max-width: 80vw;
+  color: var(--textColor);
+  position: absolute;
+}
+@media screen and (min-width: 800px) {
+  .banner-text p {
+    font-size: 1.25rem;
   }
+}
+.banner-text h2 {
+  color: var(--Clr-Primary);
+}
+.banner-text p {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.btn-banner {
+  outline: 1px solid var(--Clr-Primary);
+  outline-offset: 4px;
+}
+.bi-list {
+  font-size: 2rem;
+  color: var(--Clr-Primary);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.content-divided {
+  height: 0.5rem;
+  background: linear-gradient(
+    to left, var(--Clr-Primary),
+    var(--Clr-Primary-Light),
+    var(--Clr-Primary) 
+  );
+}
+/*
+============ 
+feature part 
+============ 
+*/
+.features{
+    display: flex;
+    /* flex-   (not working true) */
+}
+.feature{
+    text-align: center;
+    background-color: var(--Clr-gray-5);
+    padding: 20px 0px;
+}
+.feature span{
+    display: inline-block;
+    margin: 1rem 0rem;
+}
+.feature-icon{
+    font-size: 2rem;
+    color: var(--Clr-Primary);
+}
+.feature-content{
+    padding: 1rem;
+}

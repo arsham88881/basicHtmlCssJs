@@ -30,12 +30,14 @@ global config
     "Segoe UI", sans-serif;
   --textColor: white;
   --Clr-Primary: #f77f00;
+  --Clr-Primary-opacity:#f7800086;
   --Clr-Primary-Light: #fcbf49;
   --Clr-Secoundery: #d62828;
   --Clr-light: #eae2b7;
   --Clr-dark: #003049;
-  --Clr-gray-1: #b7b5b5;
-  --Clr-gray-5: #f0eded;
+  --Clr-gray-1: #e8e5e5;
+  --Clr-gray-5: #f0f0f0;
+
   --transition: all 0.3s linear;
   --radius: 0.5rem;
 }
@@ -45,6 +47,10 @@ body {
 }
 a {
   text-decoration: none;
+}
+img{
+  width: 100%;
+  height: 100%;
 }
 h1 {
   font-size: 2rem;
@@ -117,9 +123,10 @@ header part
 .content-divided {
   height: 0.5rem;
   background: linear-gradient(
-    to left, var(--Clr-Primary),
+    to left,
+    var(--Clr-Primary),
     var(--Clr-Primary-Light),
-    var(--Clr-Primary) 
+    var(--Clr-Primary)
   );
 }
 /*
@@ -127,23 +134,83 @@ header part
 feature part 
 ============ 
 */
-.features{
-    display: flex;
-    /* flex-   (not working true) */
+.features {
+  display: flex;
+  flex-wrap: wrap;
 }
-.feature{
-    text-align: center;
-    background-color: var(--Clr-gray-5);
-    padding: 20px 0px;
+@media screen and (min-width: 760px) {
+  .features {
+    flex-wrap: nowrap;
+  }
 }
-.feature span{
-    display: inline-block;
-    margin: 1rem 0rem;
+.feature {
+  text-align: center;
+  background-color: var(--Clr-gray-1);
+  padding: 20px 0px;
+  transition: var(--transition);
 }
-.feature-icon{
-    font-size: 2rem;
-    color: var(--Clr-Primary);
+.feature span {
+  display: inline-block;
+  margin: 0.5rem 0rem;
 }
-.feature-content{
-    padding: 1rem;
+.feature:hover {
+  background-color: var(--Clr-gray-5);
+  box-shadow: 0px 5px 0px var(--Clr-Primary);
 }
+.feature:hover .feature-icon {
+  transform: translateY(-7px);
+  transition: var(--transition);
+}
+.feature-icon {
+  font-size: 2rem;
+  color: var(--Clr-Primary);
+}
+.feature-content {
+  padding: 1rem;
+}
+
+/*
+============ 
+aboutUs part 
+============ 
+*/
+.aboutUs {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 30px 50px;
+}
+.aboutUs-text {
+  margin-top: 30px;
+}
+.aboutUs-text h4 {
+  color: var(--Clr-Primary);
+}
+.aboutUs-img-container {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  transition: var(--transition);
+  overflow: hidden;
+}
+.aboutUs-img-container:hover{
+  box-shadow: 5px 5px 5px var(--Clr-Primary);
+}
+.aboutUs-img-container:hover img{
+  transform: scale(1.2);
+  transition: var(--transition);
+}
+@media screen and (min-width: 760px) {
+  .aboutUs-img-container{
+    width: 500px;
+    height: 300px;
+  }
+  .aboutUs{
+    justify-content: center;
+  }
+  .aboutUs-text{
+    padding: 30px;
+    max-width: 40vw;
+  }
+}
+

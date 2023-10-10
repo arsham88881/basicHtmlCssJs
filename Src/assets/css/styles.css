@@ -30,7 +30,7 @@ global config
     "Segoe UI", sans-serif;
   --textColor: white;
   --Clr-Primary: #f77f00;
-  --Clr-Primary-opacity:#f7800086;
+  --Clr-Primary-opacity: #f7800086;
   --Clr-Primary-Light: #fcbf49;
   --Clr-Secoundery: #d62828;
   --Clr-light: #eae2b7;
@@ -48,7 +48,7 @@ body {
 a {
   text-decoration: none;
 }
-img{
+img {
   width: 100%;
   height: 100%;
 }
@@ -66,6 +66,12 @@ h2 {
     font-size: 2rem;
   }
 }
+.titleGeneral {
+  margin: 20px 0px;
+}
+.titleGeneral h4 {
+  color: var(--Clr-Primary);
+}
 .btn {
   background-color: var(--Clr-Primary);
   color: var(--textColor);
@@ -76,6 +82,12 @@ h2 {
 .btn:hover {
   color: var(--ColorDark);
   background-color: var(--Clr-Primary-Light);
+}
+.flexstyle {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px 50px;
 }
 /*
 ============ 
@@ -174,18 +186,11 @@ feature part
 aboutUs part 
 ============ 
 */
-.aboutUs {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 30px 50px;
-}
+
 .aboutUs-text {
-  margin-top: 30px;
+  margin-top: 10px;
 }
-.aboutUs-text h4 {
-  color: var(--Clr-Primary);
-}
+
 .aboutUs-img-container {
   width: 400px;
   height: 300px;
@@ -193,24 +198,81 @@ aboutUs part
   transition: var(--transition);
   overflow: hidden;
 }
-.aboutUs-img-container:hover{
+.aboutUs-img-container:hover {
   box-shadow: 5px 5px 5px var(--Clr-Primary);
 }
-.aboutUs-img-container:hover img{
+.aboutUs-img-container:hover img {
   transform: scale(1.2);
   transition: var(--transition);
 }
 @media screen and (min-width: 760px) {
-  .aboutUs-img-container{
+  .aboutUs-img-container {
     width: 500px;
     height: 300px;
   }
-  .aboutUs{
-    justify-content: center;
-  }
-  .aboutUs-text{
+  .aboutUs-text {
     padding: 30px;
     max-width: 40vw;
   }
 }
 
+/*
+============ 
+product part 
+============ 
+*/
+.products {
+  background: var(--Clr-gray-5);
+  flex-direction: row-reverse;
+}
+.product {
+  padding: 1.2rem;
+}
+.product:hover .productCard-img-container {
+  box-shadow: 3px 3px 3px var(--Clr-Primary);
+}
+.product-article{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.product img{
+  border-radius: var(--radius);
+}
+.productCard-text {
+  font-weight: 1000;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+.productCard-text .price {
+  color: var(--Clr-Primary);
+  direction: rtl;
+}
+.productCard-img-container {
+  width: 60vw;
+  overflow: hidden;
+  transition: var(--transition);
+  border-radius: var(--radius);
+}
+
+.productCard-img-container:hover img {
+  transform: scale(1.2);
+  transition: var(--transition);
+}
+@media screen and (min-width: 760px) {
+  .productCard-img-container {
+    width: 200px;
+    height: 250px;
+  }
+}
+.products-text {
+  margin-bottom: 3.5rem;
+}
+@media screen and (min-width: 760px) {
+  .products-text {
+    width: 350px;
+    margin-left: 0px;
+    margin-bottom:0;
+
+  }
+}

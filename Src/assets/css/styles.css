@@ -276,3 +276,62 @@ product part
 
   }
 }
+
+/*
+============ 
+khadamat part 
+============ 
+*/
+
+.khadamat-title {
+  text-align: center;
+}
+.khadamatCard{
+  width: 80vw;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: var(--Clr-gray-1);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+.khadamatCard:hover{
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+@media screen and (min-width:760px) {
+  .khadamatCard{
+    width: 300px;
+    margin-left: 2rem;
+  }
+}
+.khadamat-img-container{
+  margin: 0px 0px 1.5rem 0px;
+  height: 17rem;
+  position: relative;
+}
+.khadamat-img-container img{
+  object-fit: cover;
+  border-top-right-radius: var(--radius);
+  border-top-left-radius: var(--radius);
+}
+.khadamat-text{
+  padding: 0.5rem 1rem ;
+  max-width: 17rem;
+}
+.khadamatCard a{
+  display: inline-block;
+  margin-right: 1.5rem;
+  margin-bottom: 2rem;
+  margin: 1rem 1.5rem 2rem 0rem;
+}
+.img-span-icon{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 100%;
+  left: 50%;
+  background-color: var(--Clr-Primary-Light);
+  border: 5px solid var(--Clr-gray-1);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  padding: 5px 10px;
+}

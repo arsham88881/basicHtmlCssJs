@@ -89,6 +89,9 @@ h2 {
   flex-wrap: wrap;
   padding: 30px 50px;
 }
+textarea{
+  resize: none;
+}
 /*
 ============ 
 header part 
@@ -334,4 +337,77 @@ khadamat part
   border-radius: 50%;
   font-size: 1.5rem;
   padding: 5px 10px;
+}
+/*
+============ 
+contanct part 
+============ 
+*/
+.contact{
+  background-color: var(--Clr-gray-1);
+}
+.contact-container{
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+.contact-item{
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.contact-item-title{
+  color: var(--Clr-Primary);
+  direction: rtl;
+}
+.contact-item-text{
+  max-width: 300px;
+}
+.contact-form{
+  background-color: white;
+  width: 25rem;
+  border-radius: var(--radius);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+@media screen and (min-width: 769px) {
+  .contact-form{
+      margin-right: 20rem;
+  }
+}
+.contact-form:hover{
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+}
+.input-group{
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+
+}
+.form-control{
+  display: block;
+  width: 100%;
+  direction: rtl;
+  border-radius: var(--radius);
+  margin-bottom: 1.2rem;
+  padding: 0.75rem 0.75rem;
+  border: none;
+  background-color: var(--Clr-gray-5);
+}
+.form-control::placeholder{
+  font-family: var(--ff-primary);
+  font-weight: 500;
+}
+.form-title{
+  margin-top: 1rem;
+  text-align: center;
+}
+.form-btn{
+  border: none;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-family: var(--ff-primary)
 }

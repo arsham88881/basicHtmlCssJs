@@ -94,13 +94,119 @@ textarea{
 }
 /*
 ============ 
+navbar part
+============ 
+*/
+.nav-btn {
+  font-size: 2.5rem;
+  color: var(--Clr-Primary);
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1;
+  animation: beat 2s infinite ease;
+}
+.navbar{
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: var(--Clr-gray-5);
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  transform: translateX(100%);
+  box-shadow: -3px 0 3px rgb(0, 0, 0,0.2);
+  transition: var(--transition);
+}
+.show-navbar{   /*class for js*/
+  transform: translateX(0);
+}
+@media screen and (min-width:767px) {
+  .navbar{
+    width: 30vw;
+   max-width: 20rem;
+  }
+}
+.navbar-header{
+  text-align: left;
+  font-size:2.5rem;
+}
+.navbar-close-btn{
+  cursor: pointer;
+  color: var(--Clr-dark);
+  transition: var(--transition);
+}
+.navbar-close-btn:hover{
+  color: var(--Clr-Primary);
+}
+.navbar-items-list{
+  list-style-type: none;
+  direction: rtl;
+  font-size: 1.1rem ;
+}
+.navbar-item{
+  display: block;
+  padding: 0.25rem 0.5rem;
+  color: var(--Clr-dark);
+  transition: var(--transition);
+}
+.navbar-item:hover{
+  background-color: var(--Clr-Primary-Light);
+  border-right: 0.35rem solid var(--Clr-Primary);
+  padding-right: 1rem;
+
+}
+.navbar-item-icon{
+  margin-left: 0.25rem;
+  font-size: 1.4rem;
+}
+/*
+============ 
+animations part 
+============ 
+*/
+@keyframes beat {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+@keyframes poshup {
+  0%{
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes poshdown {
+  0%{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*
+============ 
 header part 
 ============ 
 */
 .banner {
   height: 90vh;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
-    url(/Src/assets/lib/images/bigHiroImage.png) center/cover no-repeat fixed;
+    url(/Src/assets/lib/images/bigHiroImage-min.png) center/cover no-repeat fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -119,21 +225,19 @@ header part
 }
 .banner-text h2 {
   color: var(--Clr-Primary);
+  animation: poshup 2s ease-out 20ms 1;
 }
 .banner-text p {
   margin-top: 2rem;
   margin-bottom: 1rem;
+  animation: poshdown 2s ease-out 20ms 1;
 }
 .btn-banner {
+  display: inline-block;
   outline: 1px solid var(--Clr-Primary);
   outline-offset: 4px;
-}
-.bi-list {
-  font-size: 2rem;
-  color: var(--Clr-Primary);
-  position: absolute;
-  top: 10px;
-  right: 10px;
+  animation: poshdown 2s linear 20ms 1;
+
 }
 .content-divided {
   height: 0.5rem;
@@ -410,4 +514,32 @@ contanct part
   width: 100%;
   padding: 1rem;
   font-family: var(--ff-primary)
+}
+/*
+============ 
+footer part 
+============ 
+*/
+.footer{
+  text-align: center;
+  background-color: #222;
+  color: white;
+  padding: 3rem 0rem;
+}
+.footer-text{
+  direction: rtl;
+}
+.footer-text-icon{
+  color: var(--Clr-Primary);
+  font-weight: 700;
+}
+.footer-icon{
+  color: white;
+  transition: var(--transition);
+}
+.footer-icon:hover{
+  color: var(--Clr-Primary);
+}
+.footer-icon-container{
+  font-size: 1.5rem;
 }

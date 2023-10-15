@@ -30,6 +30,8 @@ global style
   --clr-light: #edf2f4;
   --clr-gray: #8d99ae;
   --clr-dark: #2b2d42;
+  --defaut-width-mobile : 70vw;
+  --radius : 5px;
 }
 body {
   font-family: var(--ff-vazir);
@@ -40,7 +42,7 @@ body.light {
   --clr-text: var(--clr-dark);
   --clr-card: var(--clr-primary);
   --clr-card-hover: var(--clr-primary-light);
-  --img-sunny: url("../lib/images/sunny-todoApp-min.jpg");
+  --img-container: url("../lib/images/sunny-todoApp-min.jpg");
   /*end of localvariable */
   background-color: var(--clr-background);
   color: var(--clr-text);
@@ -51,9 +53,97 @@ body.dark {
   --clr-text: var(--clr-light);
   --clr-card: var(--clr-primary-light);
   --clr-card-hover: var(--clr-primary);
-  --img-night: url("../lib/images/night-todoApp-min.jpg");
+  --img-container: url("../lib/images/night-todoApp-min.jpg");
   /*end of localvariable */
   background-color: var(--clr-background);
   color: var(--clr-text);
 }
 
+.center-style{
+  display: flex;
+  justify-content: center;
+}
+input{
+  border: none;
+  direction: rtl;
+  padding: 0.25rem 0.5rem;
+}
+button {
+  border: none;
+}
+/*
+===================
+banner img part
+===================
+*/
+
+.banner-img-todo {
+  background: linear-gradient(rgba(0, 0, 0, 0.192), rgba(0, 0, 0, 0.175)),
+    var(--img-container) center/ cover no-repeat fixed;
+  height: 70vh;
+  position: relative;
+}
+.banner-text-todo{
+  width: var(--defaut-width-mobile);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  position: absolute;
+  top:25%;
+}
+@media screen and (min-width: 768px) {
+  .banner-text-todo{
+    width: 50vw;
+  }
+}
+.banner-text-icon-todo{
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+/*
+===================
+input part
+===================
+*/
+
+.input-container-todo{
+  position: absolute;
+  top: 50%;
+  width: var(--defaut-width-mobile);
+  background-color: var(--clr-primary);
+  border-radius: var(--radius);
+  padding: 2rem 1rem;
+  display: flex;
+  flex-wrap: nowrap;
+}
+@media screen and (min-width: 768px) {
+  .input-container-todo{
+    width: 50vw;
+  }
+}
+#todo-input{
+  width: 90%;
+  background-color: var(--clr-primary);
+  font-size: 1rem;
+  font-family: var(--ff-vazir);
+  color: var(--clr-light);
+}
+#todo-input::placeholder{
+  font-family: var(--ff-vazir);
+  color: var(--clr-light);
+}
+#todo-input:focus{
+  outline: none;
+}
+.add-btn-container-todo{
+  width: 10%;
+}
+#add-todo-btn{
+  border-radius: 50%;
+  padding: 1rem;
+  cursor: pointer;
+}
+#add-todo-btn:hover{
+  background:var(--clr-gray);
+}

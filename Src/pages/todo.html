@@ -1,17 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>resumay || todoApp</title>
-    <link rel="stylesheet" href="../assets/css/bootstrap-Icon.css">
-    <link rel="stylesheet" href="../assets/css/todo-style.css">
-</head>
-<body class="dark">
-    <h1>لورم ایپسوم متن تست طراحی</h1>
-    <br>
-    <br>
-    <br>
+    <link rel="stylesheet" href="../assets/css/bootstrap-Icon.css" />
+    <link rel="stylesheet" href="../assets/css/basics-styles.css">
+    <link rel="stylesheet" href="../assets/css/todo-style.css" />
+  </head>
+  <body class="dark">
+    <!-- navbar part -->
+    <span class="nav-btn"><i class="bi bi-list"></i></span>
+    <nav class="navbar">
+      <div class="navbar-header">
+        <span class="navbar-close-btn"><i class="bi bi-x"></i></span>
+      </div>
+      <ul class="navbar-items-list">
+        <li>
+          <a href="#" class="navbar-item">
+            <span class="navbar-item-icon"><i class="bi bi-house-exclamation-fill"></i></span>
+            صفحه ی اصلی
+          </a>
+        </li>
+        <li>
+          <a href="#" class="navbar-item">
+            <span class="navbar-item-icon"><i class="bi bi-info-circle-fill"></i></span>
+            درباره ما
+          </a>
+        </li>
+        <li>
+          <a href="#" class="navbar-item">
+            <span class="navbar-item-icon"><i class="bi bi-box-fill"></i></span>
+            محصولات
+          </a>
+        </li>
+        <li>
+          <a href="#" class="navbar-item">
+            <span class="navbar-item-icon"><i class="bi bi-book-fill"></i></span>
+            خدمات
+          </a>
+        </li>
+        <li>
+          <a href="#" class="navbar-item">
+            <span class="navbar-item-icon"><i class="bi bi-messenger"></i></span>
+            تماس با ما
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- end of navbar part -->
+    <div class="banner-img-todo center-style">
+      <div class="banner-text-todo">
+        <h1>لیست وظایف</h1>
+        <!-- <span><i class="bi bi-moon-stars-fill"></i></span> use for switch light mode to dark mode -->
+        <span class="banner-text-icon-todo"
+          ><i class="bi bi-brightness-high"></i>
+        </span>
+      </div>
+      <div class="input-container-todo">
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="افزودن وظیفه ی جدید ..."
+        />
+        <span class="add-btn-container-todo"
+          ><button id="add-todo-btn"><i class="bi bi-plus"></i></button
+        ></span>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
     <script src="../assets/Js/script.js"></script>
-</body>
+  </body>
 </html>

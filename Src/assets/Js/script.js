@@ -1,3 +1,4 @@
+async function main(){
 /*basices part start*/
 //setup nav
 var navbar = document.querySelector("nav.navbar");
@@ -33,3 +34,5 @@ BtnThemSwitcher.addEventListener('click',()=>{
   IconThemSwitcher.classList.toggle("bi-moon-stars-fill");
 
 });
+}
+document.addEventListener('DOMContentLoaded',main);

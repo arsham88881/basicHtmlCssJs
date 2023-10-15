@@ -1,0 +1,59 @@
+/*
+===================
+reset browsers and addfonts
+===================
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "vazir";
+  src: url("../lib/fonts/vazir-Font/Vazir-Medium-FD-WOL.woff") format("woff"),
+    url("../lib/fonts/vazir-Font/Vazir-Medium-FD-WOL.woff2") format("woff2");
+}
+
+/*
+===================
+global style
+===================
+*/
+
+:root {
+  --ff-vazir: "vazir", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  --clr-primary: #d90429;
+  --clr-primary-light: #ef233c;
+  --clr-light: #edf2f4;
+  --clr-gray: #8d99ae;
+  --clr-dark: #2b2d42;
+}
+body {
+  font-family: var(--ff-vazir);
+}
+body.light {
+  /* localvariable for light them  */
+  --clr-background: var(--clr-light);
+  --clr-text: var(--clr-dark);
+  --clr-card: var(--clr-primary);
+  --clr-card-hover: var(--clr-primary-light);
+  --img-sunny: url("../lib/images/sunny-todoApp-min.jpg");
+  /*end of localvariable */
+  background-color: var(--clr-background);
+  color: var(--clr-text);
+}
+body.dark {
+  /* localvariable for dark them  */
+  --clr-background: var(--clr-dark);
+  --clr-text: var(--clr-light);
+  --clr-card: var(--clr-primary-light);
+  --clr-card-hover: var(--clr-primary);
+  --img-night: url("../lib/images/night-todoApp-min.jpg");
+  /*end of localvariable */
+  background-color: var(--clr-background);
+  color: var(--clr-text);
+}
+

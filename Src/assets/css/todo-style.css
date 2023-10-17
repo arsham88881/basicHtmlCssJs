@@ -30,8 +30,9 @@ global style
   --clr-light: #edf2f4;
   --clr-gray: #8d99ae;
   --clr-dark: #2b2d42;
-  --defaut-width-mobile : 70vw;
-  --radius : 5px;
+  --defaut-width-mobile: 70vw;
+  --radius: 5px;
+  --trasition-default: all 0.3s linear;
 }
 body {
   font-family: var(--ff-vazir);
@@ -59,17 +60,32 @@ body.dark {
   color: var(--clr-text);
 }
 
-.center-style{
+.center-style {
   display: flex;
   justify-content: center;
 }
-input{
+input {
   border: none;
   direction: rtl;
   padding: 0.25rem 0.5rem;
 }
 button {
   border: none;
+}
+.card {
+  width: var(--defaut-width-mobile);
+  background-color: var(--clr-primary);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  color: var(--clr-light);
+}
+@media screen and (min-width: 768px) {
+  .card {
+    width: 50vw;
+  }
+}
+ul {
+  list-style-type: none;
 }
 /*
 ===================
@@ -83,23 +99,33 @@ banner img part
   height: 70vh;
   position: relative;
 }
-.banner-text-todo{
+.banner-text-todo {
   width: var(--defaut-width-mobile);
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
   position: absolute;
-  top:25%;
+  top: 25%;
 }
 @media screen and (min-width: 768px) {
-  .banner-text-todo{
+  .banner-text-todo {
     width: 50vw;
   }
 }
-.banner-text-icon-todo{
+.banner-text-icon-todo {
   font-size: 2rem;
   cursor: pointer;
-  transition: all 0.3s linear;
+  transition: var(--trasition-default);
+}
+.btn-container {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 0.1rem solid var(--clr-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 /*
 ===================
@@ -107,43 +133,83 @@ input part
 ===================
 */
 
-.input-container-todo{
+.input-container-todo {
   position: absolute;
   top: 50%;
-  width: var(--defaut-width-mobile);
-  background-color: var(--clr-primary);
-  border-radius: var(--radius);
-  padding: 2rem 1rem;
   display: flex;
+  justify-content: right;
   flex-wrap: nowrap;
 }
-@media screen and (min-width: 768px) {
-  .input-container-todo{
-    width: 50vw;
-  }
-}
-#todo-input{
+
+#todo-input {
   width: 90%;
   background-color: var(--clr-primary);
   font-size: 1rem;
   font-family: var(--ff-vazir);
-  color: var(--clr-light);
 }
-#todo-input::placeholder{
+#todo-input::placeholder {
   font-family: var(--ff-vazir);
   color: var(--clr-light);
 }
-#todo-input:focus{
+#todo-input:focus {
   outline: none;
 }
-.add-btn-container-todo{
-  width: 10%;
-}
-#add-todo-btn{
+
+#add-todo-btn {
   border-radius: 50%;
   padding: 1rem;
   cursor: pointer;
 }
-#add-todo-btn:hover{
-  background:var(--clr-gray);
+#add-todo-btn:hover {
+  background: var(--clr-gray);
 }
+
+/*
+===================
+show tasks part
+===================
+*/
+
+.task-countainer {
+  position: absolute;
+  top: 80%;
+}
+.tasks {
+  overflow-y: auto;
+  max-height: 150px;
+}
+.task {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--clr-gray);
+}
+.task p {
+  overflow: hidden;
+}
+.task .cancel-task-btn {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.cancel-task-btn:hover {
+  color: var(--clr-gray);
+}
+.task-text {
+  margin-left: auto;
+}
+.task-check[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-light);
+}
+.task-check[type="checkbox"]:checked {
+  content: url(../lib/images/check.svg);
+}
+

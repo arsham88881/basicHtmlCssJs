@@ -280,3 +280,12 @@ button.on{
 .tasks.completed .task:not(.checked){
   display: none;
 } 
+
+
+
+.footer-todo{
+  text-align: center;
+  direction: rtl;
+  font-size: 1.5rem;
+  margin-top:10rem;
+}

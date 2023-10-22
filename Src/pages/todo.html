@@ -76,9 +76,9 @@
         </div>
       </div>
       <div class="task-countainer card">
-        <span id="not-exist-todo"></span>
+        <!-- <span id="not-exist-todo"></span> -->
         <ul class="tasks">
-          <!-- <li class="task" draggable="true">
+          <!-- <li class="task checked" draggable="true">
             <div class="btn-container">
               <input type="checkbox" class="task-check" />
             </div>
@@ -86,23 +86,21 @@
             <div class="cancel-task-btn">
               <i class="bi bi-x"></i>
             </div>
-          </li> -->
-          <!-- <li class="task" draggable="true">
-            <div class="btn-container">
-              <input type="checkbox" class="task-check" />
-              <span class="check"></span>
-            </div>
-            <p class="task-text">یادگیری جاوا اسکریپت</p>
-            <div class="cancel-task-btn">
-              <i class="bi bi-x"></i>
-            </div>
-          </li> -->
+          </li>  -->
         </ul>
+        <div class="footer-filters">
+          <p id="reminder">"<span>0</span>"باقی مانده</p>
+          |
+          <div class="filters">
+            <button id="completed">تکمیل شده</button>
+            <button id="active">فعال ها</button>
+            <button id="all" class="on">همه</button>
+          </div>
+          |
+          <button id="remove-multiple">حذف تکمیل شده ها</button>
+        </div>
       </div>
     </div>
-    <br />
-    <br />
-    <br />
     <script src="../assets/Js/script.js"></script>
   </body>
 </html>

@@ -169,6 +169,11 @@ input part
 show tasks part
 ===================
 */
+/* draggable feature */
+.draggable{
+  opacity: 0.5;
+  box-shadow: 3px 3px 3px var(--clr-gray);
+}
 
 .task-countainer {
   position: absolute;
@@ -176,6 +181,8 @@ show tasks part
 }
 .tasks {
   overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 1rem;
   max-height: 150px;
 }
 .task {
@@ -213,3 +220,63 @@ show tasks part
   content: url(../lib/images/check.svg);
 }
 
+.cancel-task-action{
+  animation: cancel 1s linear 10ms;
+}
+@keyframes cancel {
+  0%{
+    transform: translatex(1px);
+  }
+  25%{
+    transform: translateX(3rem);
+  }
+  50%{
+    transform: translateX(9rem);
+  }
+  75%{
+    transform: translateX(18rem);
+  }
+  100%{
+    transform: translateX(100vw);
+  }
+}
+
+/*
+===================
+filters part
+===================
+*/
+.footer-filters{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: baseline;
+}
+#reminder{
+  direction:rtl;
+  font-size: 0.9rem;
+}
+.footer-filters button{
+ text-decoration: underline;
+ display: inline-block;
+ font-family: var(--ff-vazir);
+ background-color: var(--clr-primary);
+ color: var(--clr-text);
+ cursor: pointer;
+ margin:0px 4px;
+}
+button.on{
+  color: blue;
+  transition: all 0.3s linear;
+}
+.checked .task-text{
+  text-decoration: line-through;
+  font-style: italic;
+}
+.tasks.active .task.checked{
+  display: none;
+}
+.tasks.completed .task:not(.checked){
+  display: none;
+} 
